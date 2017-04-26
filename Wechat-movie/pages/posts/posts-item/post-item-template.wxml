@@ -1,0 +1,24 @@
+<!--pages/posts/post.wxml-->
+<template name="postItem">
+        <view class="post-container-details">
+                <view class="post-container-detail">
+                    <view class="post-container-detail-touxiang">
+                        <image src="{{item.avatar}}"></image>
+                        <text>{{item.date}}</text>
+                    </view>
+                    <text class="post-container-details-title">{{item.title}}</text>
+                    <image class="post-container-details-bgimg"
+                           bindtap="onGoDetail"   src="{{item.imgSrc}}"
+                           data-postId="{{item.postId}}"></image>
+                    <text class="post-container-details-texs">{{item.content}}</text>
+                    <view class="post-container-details-icons">
+                        <image class="souchang"
+                               src="../../images/icon/start.png"></image>
+                        <text class="souchang-number">92</text>
+                        <image class="pinglun-icon"
+                               src="../../images/icon/view.png"></image>
+                        <text class="pinglun-number">65</text>
+                    </view>
+                </view>
+        </view>
+</template>

@@ -1,3 +1,7 @@
+<!--pages/welcome/welcome.wxml-->
 <view class="welcome-container">
-    <text>Hello</text>
+    <image src="{{imgSrc}}" data-id="{{imgSrc}}"
+           class="welcome-contrainer-img"></image>
+    <text class="welcome-contrainer-title">Hello 小薇</text>
+    <text class="welcome-contrainer-goPost" bindtap="onTap">登录小程序</text>
 </view>

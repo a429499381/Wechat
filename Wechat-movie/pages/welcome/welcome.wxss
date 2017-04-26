@@ -1,1 +1,32 @@
 /* pages/welcome/welcome.wxss */
+page{
+  height: 100%;
+  background-color: #b3d4db;
+}
+
+  .welcome-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .welcome-container image {
+      height: 200rpx;
+      width: 200rpx;
+      margin-top: 150rpx;
+    }
+
+    .welcome-contrainer-title {
+      margin-top: 100rpx;
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    .welcome-contrainer-goPost {
+      margin-top: 50px;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 1px solid #555;
+      border-radius: 10px;
+    }

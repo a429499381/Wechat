@@ -1,0 +1,87 @@
+/* pages/posts/post.wxss */
+.post-container-swiper {
+  width: 100%;
+  height: 500rpx;
+
+}
+  .post-container-swiper image {
+    width: 100%;
+    height: 500rpx;
+  }
+
+.post-container-details {
+  }
+
+.post-container-detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+
+  .post-container-detail-touxiang {
+    margin: 10rpx 0 20rpx 10rpx;
+  }
+
+    .post-container-detail-touxiang image {
+      width: 60rpx;
+      height: 60rpx;
+      vertical-align: middle;
+    }
+
+    .post-container-detail-touxiang text {
+      margin-left: 20rpx;
+      vertical-align: middle;
+      margin-bottom: 5px;
+      font-size: 26rpx;
+    }
+
+  .post-container-details-title {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  .post-container-details-bgimg {
+    margin-left: 16px;
+    width: 100%;
+    height: 340rpx;
+    margin: auto 0;
+    margin-bottom: 15px;
+  }
+
+  .post-container-details-texs {
+    color: #666666;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+  }
+
+  .post-container-details-icons {
+    font-size: 13px;
+    flex-direction: row;
+    line-height: 16px;
+    margin-left: 10px;
+  }
+
+  .post-container-details-icons image {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .post-container-details-icons text {
+    //vertical-align: middle;
+    margin-right: 20rpx;
+  }
+
+
+

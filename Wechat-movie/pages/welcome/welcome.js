@@ -1,11 +1,22 @@
 // pages/welcome/welcome.js
 Page({
-  data:{},
+  data:{
+    imgSrc: {}
+  },
+  onTap: function(event) {
+    wx.switchTab({
+      url: '/pages/posts/post'
+    })
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+
   },
   onReady:function(){
     // 页面渲染完成
+    this.setData({
+      imgSrc: '/images/avatar/1.png'
+    })
   },
   onShow:function(){
     // 页面显示
