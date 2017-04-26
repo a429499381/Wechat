@@ -41,7 +41,16 @@ Page({
     })
 
     wx.showToast({
-      title: '收藏成功'
+      title: PosCollected? '收藏成功': '取消收藏',
+      duration: 500
+    })
+  },
+
+  onMusicTap:function (event) {
+    wx.playBackgroundAudio({
+      dataUrl: "http://ws.stream.qqmusic.qq.com/C100002mWVx72p8Ugp.m4a?fromtag=38",
+      title: "恋恋风尘-老狼",
+      coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001VaXQX1Z1Imq.jpg?max_age=2592000"
     })
   },
 
