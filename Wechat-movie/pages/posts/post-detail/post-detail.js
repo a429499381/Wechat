@@ -1,10 +1,13 @@
 // pages/posts/post-detail/post-detail.js
 var data = require('../../../data/posts-data.js');
+var app = getApp()
 Page({
   data:{
     detail: {},
+    isPlayingMusic: false
   },
   onLoad:function(options){
+    var globalData = app.globalData
     var that = this
     // 页面初始化 options为页面跳转所带来的参数
     var postId = options.id
@@ -26,6 +29,19 @@ Page({
       wx.setStorageSync('posts_collected', postsCollected)
     }
 
+    // 监听音乐播放状态
+    wx.onBackgroundAudioPlay(function () {
+      that.setData({
+        isPlayingMusic:  true
+      })
+    })
+
+    // 监听音乐播放状态
+    wx.onBackgroundAudioPause(function () {
+      that.setData({
+        isPlayingMusic:  false
+      })
+    })
   },
 
   onShouchang:function (event) {
@@ -47,10 +63,45 @@ Page({
   },
 
   onMusicTap:function (event) {
-    wx.playBackgroundAudio({
-      dataUrl: "http://ws.stream.qqmusic.qq.com/C100002mWVx72p8Ugp.m4a?fromtag=38",
-      title: "恋恋风尘-老狼",
-      coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001VaXQX1Z1Imq.jpg?max_age=2592000"
+    var id = this.data.currentPostId
+    var isPlayingMusic = this.data.isPlayingMusic
+    if (isPlayingMusic) {
+      wx.pauseBackgroundAudio()
+      this.setData({
+        isPlayingMusic: false
+      })
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.detail.music.url,
+        title: this.data.detail.music.title,
+        coverImgUrl: this.data.detail.music.coverImgUrl
+      })
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+
+  },
+
+  onFenxang:function (event) {
+    console.log('onFenxang')
+    var itemList =  [
+      '分享给微信好友',
+      '分享到朋友圈',
+      '分享到QQ',
+      '分享到知乎',
+    ]
+    wx.showActionSheet({
+      itemList: itemList,
+      itemColor: '#405f80',
+      success:function (res) {
+        // res.cancel  用户是否点击了取消
+        // res.tapIndex  数组元素的序号 从0 开始
+        wx.showModal({
+            title: '用户分享到' + itemList[res.tapIndex],
+            content: res.cancel + '目前无法实现分享API'
+        })
+      }
     })
   },
 
